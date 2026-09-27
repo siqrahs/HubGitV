@@ -11,6 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.hubgitv.client.core.RepoEntity
+import com.hubgitv.client.core.UserEntity
+import com.hubgitv.client.core.RepoEntity
+
 
 @Composable
 fun RepoListScreen(viewModel: RepoViewModel, onRepoClick: (String) -> Unit) {
