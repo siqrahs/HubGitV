@@ -1,3 +1,5 @@
+package com.hubgitv.client
+
 import android.app.Application
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
