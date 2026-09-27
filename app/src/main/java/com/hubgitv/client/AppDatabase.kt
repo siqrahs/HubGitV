@@ -22,8 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "hubgitv_database"
                 )
-                // 3. DITAMBAH: fallbackToDestructiveMigration() digunakan agar saat versi database naik ke versi 2, 
-                // aplikasi tidak crash melainkan otomatis membuat ulang tabel baru yang bersih.
+     
                 .fallbackToDestructiveMigration()
                 .build()
                 INSTANCE = instance
