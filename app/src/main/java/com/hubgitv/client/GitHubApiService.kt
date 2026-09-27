@@ -1,3 +1,5 @@
+package com.hubgitv.client
+
 import retrofit2.http.GET
 import retrofit2.http.Path
 
