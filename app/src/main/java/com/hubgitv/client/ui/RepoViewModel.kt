@@ -9,6 +9,13 @@ import com.hubgitv.client.core.AuthManager
 import com.hubgitv.client.core.RepoEntity
 import com.hubgitv.client.core.RetrofitClient
 import kotlinx.coroutines.launch
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.ui.unit.dp
+
 
 class RepoViewModel(application: Application) : AndroidViewModel(application) {
     private val authManager = AuthManager(application)
