@@ -1,3 +1,5 @@
+package com.hubgitv.client
+
 import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
