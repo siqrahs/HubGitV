@@ -11,6 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.hubgitv.client.core.UserEntity
+import com.hubgitv.client.core.RepoEntity
 
 @Composable
 fun DashboardScreen(viewModel: DashboardViewModel, onNavigateToLogin: () -> Unit) {
