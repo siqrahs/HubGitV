@@ -141,7 +141,8 @@ kotlin {
 
 dependencies {
       implementation("androidx.security:security-crypto:1.1.0-alpha06") 
-      Room untuk Caching Profil val roomVersion = "2.6.1"   
+      
+      val roomVersion = "2.6.1"
       implementation("androidx.room:room-runtime:$roomVersion") 
       implementation("androidx.room:room-ktx:$roomVersion") 
       annotationProcessor("androidx.room:room-compiler:$roomVersion") 
