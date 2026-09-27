@@ -1,9 +1,10 @@
 package com.hubgitv.client
 
 import android.app.Application
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableStateOf // DITAMBAH
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewModelScope // DITAMBAH
+import com.hubgitv.client.core.AppDatabase // DITAMBAH (Karena AppDatabase sekarang di dalam folder core)
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(application: Application) : AndroidViewModel(application) {
