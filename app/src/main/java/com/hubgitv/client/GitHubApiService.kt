@@ -1,7 +1,8 @@
 package com.hubgitv.client
 
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.GET // DITAMBAH
+import retrofit2.http.Path // DITAMBAH
+
 
 interface GitHubApiService {
     
