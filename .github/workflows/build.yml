@@ -18,7 +18,6 @@ on:
 
 jobs:
   build:
-    name: Build APK (${{ github.event.inputs.build_type || 'debug' }})
     runs-on: ubuntu-latest
 
     steps:
@@ -35,30 +34,20 @@ jobs:
       - name: Grant Execute Permission for Gradlew
         run: chmod +x gradlew
 
-      # Optional: Decode Keystore jika memilih release dan secret KEYSTORE_BASE64 diatur
-      - name: Setup Keystore
-        if: ${{ (github.event.inputs.build_type == 'release') && secrets.KEYSTORE_BASE64 != '' }}
-        run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/keystore.jks
-
       - name: Build APK
-        env:
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
-          BUILD_TYPE="${{ github.event.inputs.build_type }}"
-          if [ "$BUILD_TYPE" = "release" ]; then
-            echo "Running assembleRelease..."
+          SELECTED_BUILD="${{ inputs.build_type }}"
+          if [ "$SELECTED_BUILD" = "release" ]; then
+            echo "Memulai proses build Release APK..."
             ./gradlew assembleRelease --stacktrace
           else
-            echo "Running assembleDebug..."
+            echo "Memulai proses build Debug APK..."
             ./gradlew assembleDebug --stacktrace
           fi
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: HubGitV-${{ github.event.inputs.build_type || 'debug' }}-APK
+          name: HubGitV-APK
           path: app/build/outputs/apk/**/*.apk
           retention-days: 7
