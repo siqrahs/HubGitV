@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class, RepoEntity::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    
+
     abstract fun userDao(): UserDao
+    abstract fun repoDao(): RepoDao
 
     companion object {
         @Volatile
@@ -20,7 +21,11 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "hubgitv_database"
-                ).build()
+                )
+                // 3. DITAMBAH: fallbackToDestructiveMigration() digunakan agar saat versi database naik ke versi 2, 
+                // aplikasi tidak crash melainkan otomatis membuat ulang tabel baru yang bersih.
+                .fallbackToDestructiveMigration()
+                .build()
                 INSTANCE = instance
                 instance
             }
