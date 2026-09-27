@@ -26,7 +26,7 @@ val hasValidSigningProps = keystorePropsFile.exists().also { exists ->
 
 
 android {
-    namespace = "com.hubgitv"
+    namespace = "com.hubgitv.client"
     compileSdk = 36 
     
     // disable linter
