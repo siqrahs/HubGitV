@@ -1,4 +1,4 @@
-package com.hubgitv.client
+package com.hubgitv.client.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
