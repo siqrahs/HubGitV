@@ -1,10 +1,6 @@
-# Keystore & Kredensial
-*.keystore
-*.jks
-release.properties
-
-# Build & Cache
-.gradle/
-.cg/
 build/
-**/build/
+libs/
+keystore.jks
+*.apk
+.harness/
+*.tmp
