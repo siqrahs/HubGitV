@@ -1,6 +1,0 @@
-build/
-libs/
-keystore.jks
-*.apk
-.harness/
-*.tmp
