@@ -1,0 +1,16 @@
+# Build output
+build/
+.gradle/
+libs/
+*.apk
+*.aab
+
+# Keystore & kredensial
+keystore.jks
+*.jks
+*.keystore
+release.properties
+
+# Harness runtime
+.harness/
+*.tmp
